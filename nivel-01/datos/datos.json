@@ -1,0 +1,10 @@
+[
+  {
+    "nombre": "Matias",
+    "edad": 23,
+    "cosas": ["Computadora", "Celular", "Smartwach"]
+  },
+  { "nombre": "Franco", "edad": 25, "cosas": ["Notebook", "TV"] },
+  { "nombre": "Lucas", "edad": 19, "cosas": ["Smart TV", "Tablet"] },
+  { "nombre": "Abril", "edad": 22, "cosas": ["Notebook", "Tablet", "Celular"] }
+]
