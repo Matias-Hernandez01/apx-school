@@ -1,0 +1,32 @@
+{
+  "nombre": "Matias",
+  "apellido": "Hernandez",
+  "edad": 23,
+  "familiares": [
+    {
+      "nombre": "Franco",
+      "apellido": "hernandez",
+      "edad": 25,
+      "esMayor": true
+    },
+    {
+      "nombre": "Lucas",
+      "apellido": "hernandez",
+      "edad": 19,
+      "esMayor": true
+    },
+    {
+      "nombre": "Andres",
+      "apellido": "hernandez",
+      "edad": 54,
+      "esMayor": true
+    },
+    {
+      "nombre": "Analia",
+      "apellido": "Larrea",
+      "edad": 46,
+      "esMayor": true
+    }
+  ],
+  "esMayor": true
+}
