@@ -3,7 +3,7 @@ const fs = require('fs');
 const datos = fs.readFileSync('./datos.json');
 const datosParseados = JSON.parse(datos);
 
-function getAll(datosParseados) {
+function getAll() {
   return datosParseados;
 }
 
@@ -14,4 +14,13 @@ function getOlderThan(number) {
   return results;
 }
 
-module.exports = { getAll, getOlderThan };
+exports.getAll = function () {
+  return datosParseados;
+};
+
+exports.getOlderThan = function (number) {
+  const results = datosParseados.filter(({ edad }) => {
+    return edad > number;
+  });
+  return results;
+};
