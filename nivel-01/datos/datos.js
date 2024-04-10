@@ -9,18 +9,22 @@ function getAll() {
 
 function getOlderThan(number) {
   const results = datosParseados.filter(({ edad }) => {
-    edad > number;
+    return edad > number;
   });
   return results;
 }
 
-exports.getAll = function () {
-  return datosParseados;
-};
+exports.getAll = getAll;
 
-exports.getOlderThan = function (number) {
-  const results = datosParseados.filter(({ edad }) => {
-    return edad > number;
-  });
-  return results;
-};
+exports.getOlderThan = getOlderThan;
+
+// exports.getAll = function () {
+//   return datosParseados;
+// };
+
+// exports.getOlderThan = function (number) {
+//   const results = datosParseados.filter(({ edad }) => {
+//     return edad > number;
+//   });
+//   return results;
+// };
