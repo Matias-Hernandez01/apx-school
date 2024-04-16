@@ -2,8 +2,18 @@ const process = require('process');
 const operaciones = require('./operaciones');
 
 function parsearArgumentos(texto) {
-  let operacion = '';
+  let objOperaciones = {
+    '+': '+',
+    '-': '-',
+    '*': '*',
+    '/': '/',
+  };
+  let operacion;
+  let primerTermino;
+  let segundoTermino;
 
+  let partes = texto.split('+' || '-' || '*' || '/');
+  console.log(partes);
   return {
     primerTermino: 3,
     segundoTermino: 1,
