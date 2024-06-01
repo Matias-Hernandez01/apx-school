@@ -1,7 +1,16 @@
-function sort() {}
+const fs = require('fs');
+
+const peliculas = fs.readFileSync(__dirname + '/pelis.json');
+const allMoviesParse = JSON.parse(peliculas);
+
 function allMovies() {
-  return 'FUNCIONANDO';
+  console.log(allMoviesParse);
 }
+
+function sort(ordenarPor) {
+  console.log(ordenarPor);
+}
+
 function searchForTitle() {}
 function searchForTag() {}
 
