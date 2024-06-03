@@ -36,13 +36,19 @@ function delegarAcciones() {
     argumento = condicionArgvVacio[0][0];
     valor = condicionArgvVacio[0][1];
   }
-
   //*En caso de recibir el argv vacio, se retorna todas las peliculas
-  if (!condicionArgvVacio) {
+  if (!condicionArgvVacio.length) {
     return funciones.allMovies();
     //*Si el argumento ingresado es sort, se envia el valor a su funcion que es encargada de realizar el orden dependiendo su valor.
-  } else if (argumento === '--sort') {
+  }
+  if (argumento === '--sort') {
     return funciones.sort(valor);
+  }
+  if (argumento === '--search') {
+    return funciones.searchForTitle(valor);
+  }
+  if (argumento === '--tag') {
+    return funciones.searchForTag(valor);
   }
 }
 
