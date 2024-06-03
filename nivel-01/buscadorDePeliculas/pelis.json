@@ -2,51 +2,51 @@
   {
     "title": "Monkey Man",
     "rating": 7.4,
-    "tags": ["acción", "suspenso", "crimen"]
+    "tags": ["accion", "suspenso", "crimen"]
   },
   {
     "title": "Arcadian",
     "rating": 6.3,
-    "tags": ["ciencia ficcion", "Suspenso", "terror"]
+    "tags": ["ciencia ficcion", "suspenso", "terror"]
   },
   {
     "title": "Vidas Perfectas",
     "rating": 7.4,
-    "tags": ["Drama", "Suspenso"]
+    "tags": ["drama", "suspenso"]
   },
   {
     "title": "Damaged",
     "rating": 4.7,
-    "tags": ["Acción", "Suspenso", "Crimen"]
+    "tags": ["accion", "suspenso", "Crimen"]
   },
   {
     "title": "Cash Out",
     "rating": 5.2,
-    "tags": ["Acción", "Crimen", "Supenso"]
+    "tags": ["accion", "crimen", "suspenso"]
   },
   {
     "title": "Fallout",
     "rating": 8.4,
-    "tags": ["Accion y aventura", "Misterio"]
+    "tags": ["accion y aventura", "misterio"]
+  },
+  {
+    "title": "Seeat",
+    "rating": 8.2,
+    "tags": ["accion y aventura", "drama"]
   },
   {
     "title": "See",
     "rating": 8.2,
-    "tags": ["Accion y aventura", "Drama"]
-  },
-  {
-    "title": "See",
-    "rating": 8.2,
-    "tags": ["Accion y aventura", "Drama"]
+    "tags": ["accion y aventura", "drama"]
   },
   {
     "title": "Atrapados en el abismo",
     "rating": 6.3,
-    "tags": ["Accion", "Terror", "Suspenso"]
+    "tags": ["accion", "terror", "suspenso"]
   },
   {
     "title": "Mision Hostil",
     "rating": 7.2,
-    "tags": ["Accion", "Suspenso", "Bélica"]
+    "tags": ["accion", "suspenso", "belica"]
   }
 ]
