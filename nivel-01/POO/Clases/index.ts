@@ -12,11 +12,11 @@ class Peli {
   }
 }
 
-function main() {
+function main2() {
   const peliUno = new Peli('Rocky', 6);
   // peliUno.title = 'Tarzan';
 
   console.log(peliUno.getTitle());
 }
 
-main();
+main2();
