@@ -16,19 +16,27 @@ class Libro {
   }
 }
 
-// Creando instancias de la clase Libro
-const libro1 = new Libro(
-  'Cien años de soledad',
-  'Gabriel García Márquez',
-  1967
-);
-// [Tu código para el segundo libro]
-
-// Usando el método getAntiguedad y mostrando detalles de los libros
-console.log(
-  `El libro "${libro1.titulo}" de ${libro1.autor}, publicado en ${
-    libro1.añoPublicacion
-  }, tiene ${libro1.getAntiguedad()} años de antigüedad.`
-);
-
 // [Tu código para imprimir los datos del segundo libro]
+function main() {
+  // Creando instancias de la clase Libro
+  const libro1 = new Libro(
+    'Cien años de soledad',
+    'Gabriel García Márquez',
+    1967
+  );
+  // [Tu código para el segundo libro]
+
+  const libro2 = new Libro(
+    'Enloquent JavaScript 3rd Edition',
+    'Marjin Haverbeker',
+    2018
+  );
+  // Usando el método getAntiguedad y mostrando detalles de los libros
+  console.log(
+    `El libro "${libro2.titulo}" de ${libro2.autor}, publicado en ${
+      libro2.añoPublicacion
+    }, tiene ${libro2.getAntiguedad()} años de antigüedad.`
+  );
+}
+
+main();
