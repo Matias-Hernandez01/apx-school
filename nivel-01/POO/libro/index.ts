@@ -17,7 +17,7 @@ class Libro {
 }
 
 // [Tu código para imprimir los datos del segundo libro]
-function main() {
+function main3() {
   // Creando instancias de la clase Libro
   const libro1 = new Libro(
     'Cien años de soledad',
@@ -39,4 +39,4 @@ function main() {
   );
 }
 
-main();
+main3();
