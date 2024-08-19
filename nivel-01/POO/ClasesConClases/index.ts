@@ -18,9 +18,9 @@ class Banda {
   }
 }
 
-function main() {
-  const banda = new Banda(['Pato', 'Maxi'], [{ title: 'Rehen', songs: [] }]);
-  console.log(banda);
-}
+// function main() {
+const banda = new Banda(['Pato', 'Maxi'], [{ title: 'Rehen', songs: [] }]);
+console.log(banda);
+// }
 
-main();
+// main();
