@@ -1,23 +1,50 @@
 // crear las clases Edificio, Piso y Departamento aquí
-class Deparamento {
+class Departamento {
   nombre: string;
 
   constructor(nombre: string) {
     this.nombre = nombre;
   }
 
-  getName() {
+  getName(): string {
     return this.nombre;
   }
 }
 
 class Piso {
   nombre: string;
-  constructor(nombre: string) {
+  departamentos: Departamento[];
+
+  constructor(nombre: string, departamentos?: Departamento[]) {
     this.nombre = nombre;
+    this.departamentos = departamentos || [];
   }
 
-  pushDepartamento() {}
+  pushDepartamento(departamento: Departamento) {
+    return this.departamentos.push(departamento);
+  }
+
+  getDepartamentos(): Departamento[] {
+    return this.departamentos;
+  }
+}
+
+class Edificio {
+  pisos: Piso[];
+
+  constructor(pisos: Piso[]) {
+    this.pisos = pisos;
+  }
+
+  addDepartamentoToPiso(nombreDePiso: string, departamento: Departamento) {
+    const pisoEncontrado = this.pisos.find((p) => p.nombre == nombreDePiso);
+    return pisoEncontrado.pushDepartamento(departamento);
+  }
+
+  getDepartamentosByPiso(nombre: string): Departamento[] {
+    const pisoEncontrado = this.pisos.find((p) => p.nombre == nombre);
+    return pisoEncontrado.getDepartamentos();
+  }
 }
 
 // no modificar este test
