@@ -37,32 +37,32 @@ class ProductoElectrónico extends Producto {
 
 class ProductoAlimenticio extends Producto {
   fechaCaducidad: Date;
-  constructor(name: string, price: number, fechaCaducidad: Date) {
+  constructor(name: string, price: number, fechaCaducidad) {
     super(name, price);
     this.fechaCaducidad = fechaCaducidad;
   }
 
-  checkCaducidad() {
+  checkCaducidad(): boolean {
     const hoy = new Date();
-    const fechaDeHoyObjeto = {
-      año: hoy.getFullYear(),
-      mes: hoy.getMonth() + 1,
-      dia: hoy.getDate(),
-    };
-    const fechaDeHoyParseado = [fechaDeHoyObjeto.año, fechaDeHoyObjeto.mes, fechaDeHoyObjeto.dia]
-      .toString()
-      .split('-');
-    if (fechaDeHoyParseado[0] > this.fechaCaducidad.toString()) {
+
+    const fechaCaducidadString = this.fechaCaducidad.toString();
+    const fechaCaduca = new Date(fechaCaducidadString);
+    if (hoy > fechaCaduca) {
       return true;
+    } else {
+      return false;
     }
   }
 }
 
 function main() {
-  const producto1 = new Producto('Heladera', 400500);
+  // const producto1 = new Producto('Heladera', 400500);
   const productoElectronico = new ProductoElectrónico('Televisor', 300000, true, []);
   productoElectronico.setApps(['Canales gratis', 'Netflix', 'Amazon Prime', 'Disney', 'Futbol libre']);
-  console.log(productoElectronico.getAppsReverse());
+  // console.log(productoElectronico.getAppsReverse());
+  const fechaDeHarina = new Date('2024-06-27');
+  const harina = new ProductoAlimenticio('Harina', 1500, '2024-06-27');
+  console.log(harina.checkCaducidad());
 }
 
 main();
