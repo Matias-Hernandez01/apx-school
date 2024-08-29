@@ -26,4 +26,4 @@ const cosas = {
   },
 };
 
-export { getAll, getById };
+export { cosas };
