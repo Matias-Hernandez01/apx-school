@@ -19,9 +19,7 @@ const cosas = {
   },
   // Método para obtener un objeto por id
   getById: function (id: number): Cosas | undefined {
-    const busqueda = cosas.collection.find((element) => {
-      element.id === id;
-    });
+    const busqueda = cosas.collection.find((element) => element.id === id);
     return busqueda;
   },
 };
