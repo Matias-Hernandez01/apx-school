@@ -2,7 +2,8 @@ import { cosas } from './cosas';
 
 function main() {
   const todasLasCosas = cosas.getAll();
-  console.log(todasLasCosas);
+  const cosaPorId = cosas.getById(2);
+  console.log(cosaPorId);
 }
 
 main();
