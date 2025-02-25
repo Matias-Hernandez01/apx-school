@@ -3,5 +3,5 @@ export function diasDesde(fecha) {
   const fechaPasada = new Date(fecha);
   const diferencia = hoy.getTime() - fechaPasada.getTime();
   const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-  return `Han pasado ${dias} días`;
+  return `${dias} días`;
 }
