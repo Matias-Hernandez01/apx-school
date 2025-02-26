@@ -4,20 +4,29 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
-    "dev": "tsx index.ts"
+    "dev": "tsx index.ts",
+    "build": "tsc"
   },
   "ava": {
-    "extensions": {
-      "ts": "module"
-    }, 
-    "nodeArguments": [ "--import=tsimp"]
+    "typescript": {
+      "rewritePaths": {
+        "src/": "dist/"
+      },
+      "compile": false
+    },
+    "nodeArguments": [
+      "--import=tsimp"
+    ]
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@ava/typescript": "^5.0.0",
     "ava": "^6.2.0",
+    "ts-node": "^10.9.2",
     "tsimp": "^2.0.12",
-    "tsx": "^4.19.3"
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
   }
 }

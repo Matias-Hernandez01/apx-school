@@ -2,5 +2,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "target": "ESNext",
-  }
+    "outDir": "./dist"
+  },
+  "includes": ["./src/**/*.{ts,tsx}"]
 }
