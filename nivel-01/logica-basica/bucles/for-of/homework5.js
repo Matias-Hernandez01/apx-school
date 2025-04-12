@@ -43,8 +43,10 @@ for (const c of cafes) {
   // PISTA: Necesitamos un indice extra para ir 
   // acumulando cosas en el array cercanas[]
 
-  // [Tu lógica]
-}
+  //? [Tu lógica]
+
+
+ }
 
 console.log(
   "La cafeterías más cercanas son:",
