@@ -121,6 +121,14 @@ const propiedades = [
   },
 ];
 
+
+// barrio: "Palermo",
+// tipoOperacion: "alquiler",
+// tipoPropiedad: "departamento",
+// ambientes: 2,
+// precio: 120000,
+// metrosCuadrados: 50,
+
 const filtros = {
   barrio: ["Palermo", "Recoleta"], // Lista de barrios aceptados
   tipoOperacion: "alquiler", // Filtrar por tipo de operación ('alquiler' o 'compra')
@@ -135,7 +143,6 @@ const filtros = {
 
 const propiedadesFiltradas = [];
 let indicePropsFiltradas = 0;
-let coincideBarrio = false;
 
 // Acá tenés que plantear el for...of que recorre el array de propiedades
 // en cada propiedad tenés que hacer las preguntas pertinentes
@@ -148,12 +155,22 @@ let coincideBarrio = false;
 // y compararlo con la propiedad
 
 for(const propiedad of propiedades){
-
+  let coincideBarrio = false; //Resetea el condicional
+  // Aca estoy recorriendo cada objeto propiedad
   for(const propiedadFiltro of filtros.barrio){
     
-   if(propiedadFiltro === propiedad.barrio){
-    coincideBarrio = true;
-   }
+    
+    if(propiedadFiltro === propiedad.barrio){
+      coincideBarrio = true;
+      break; //Salimos del break al encontrar coincidencias
+    }
+}
+  
+  if(coincideBarrio){
+    console.log("El Barrio coincide:", propiedad);
+  } else{
+    console.log("El barrio no coincide:", propiedad);
+    
   }
   
     
