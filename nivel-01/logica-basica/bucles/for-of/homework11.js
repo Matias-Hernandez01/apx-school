@@ -152,7 +152,6 @@ for (const propiedad of propiedades) {
 
   // Aca estoy recorriendo cada objeto propiedad
   for (const propFiltro of filtros.barrio) {
-    console.log(cumpleFiltro, propFiltro);
     if (propFiltro === propiedad.barrio) {
       cumpleFiltro = true;
     }
@@ -161,20 +160,23 @@ for (const propiedad of propiedades) {
     if (propiedad.tipoOperacion !== filtros.tipoOperacion) {
       cumpleFiltro = false;
     }
-    let cumpleTipoPropiedad = true;
+
+    let cumpleTipoPropiedad = false;
     if(cumpleFiltro){
       for(const tipoPropiedad of filtros.tipoPropiedad){
-        if(tipoPropiedad !== propiedad.tipoPropiedad){
-          cumpleTipoPropiedad = false;
+        if(tipoPropiedad === propiedad.tipoPropiedad){
+          cumpleTipoPropiedad = true;
+          break;
         }
       }
     }
 
-    if(cumpleTipoPropiedad){
+    if(!cumpleTipoPropiedad){
+      cumpleFiltro = false;
+    }
 
-      if (propiedad.tipoPropiedad !== filtros.tipoPropiedad) {
-        cumpleFiltro = false;
-      }
+    if(cumpleFiltro){
+
       if (propiedad.ambientes > filtros.ambientesMax) {
         cumpleFiltro = false;
       }
