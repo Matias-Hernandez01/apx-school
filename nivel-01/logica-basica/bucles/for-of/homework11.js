@@ -16,12 +16,12 @@ const propiedades = [
     metrosCuadrados: 85,
   },
   {
-    barrio: "Belgrano",
+    barrio: "Palermo",
     tipoOperacion: "alquiler",
     tipoPropiedad: "casa",
-    ambientes: 5,
-    precio: 350000,
-    metrosCuadrados: 120,
+    ambientes: 4,
+    precio: 300000,
+    metrosCuadrados: 100,
   },
   {
     barrio: "Villa Crespo",
@@ -122,13 +122,6 @@ const propiedades = [
 ];
 
 
-// barrio: "Palermo",
-// tipoOperacion: "alquiler",
-// tipoPropiedad: "departamento",
-// ambientes: 2,
-// precio: 120000,
-// metrosCuadrados: 50,
-
 const filtros = {
   barrio: ["Palermo", "Recoleta"], // Lista de barrios aceptados
   tipoOperacion: "alquiler", // Filtrar por tipo de operación ('alquiler' o 'compra')
@@ -154,26 +147,59 @@ let indicePropsFiltradas = 0;
 // otro bucle para iterar todas las posiciones del array de filtros
 // y compararlo con la propiedad
 
-for(const propiedad of propiedades){
-  let coincideBarrio = false; //Resetea el condicional
+for (const propiedad of propiedades) {
+  let cumpleFiltro = false; //Resetea el condicional
+
   // Aca estoy recorriendo cada objeto propiedad
-  for(const propiedadFiltro of filtros.barrio){
-    
-    
-    if(propiedadFiltro === propiedad.barrio){
-      coincideBarrio = true;
-      break; //Salimos del break al encontrar coincidencias
+  for (const propFiltro of filtros.barrio) {
+    console.log(cumpleFiltro, propFiltro);
+    if (propFiltro === propiedad.barrio) {
+      cumpleFiltro = true;
     }
-}
-  
-  if(coincideBarrio){
-    console.log("El Barrio coincide:", propiedad);
-  } else{
-    console.log("El barrio no coincide:", propiedad);
-    
   }
-  
+  if (cumpleFiltro) {
+    if (propiedad.tipoOperacion !== filtros.tipoOperacion) {
+      cumpleFiltro = false;
+    }
+    let cumpleTipoPropiedad = true;
+    if(cumpleFiltro){
+      for(const tipoPropiedad of filtros.tipoPropiedad){
+        if(tipoPropiedad !== propiedad.tipoPropiedad){
+          cumpleTipoPropiedad = false;
+        }
+      }
+    }
+
+    if(cumpleTipoPropiedad){
+
+      if (propiedad.tipoPropiedad !== filtros.tipoPropiedad) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.ambientes > filtros.ambientesMax) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.ambientes < filtros.ambientesMin) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.precio < filtros.precioMin) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.precio > filtros.precioMax) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.metrosCuadrados > filtros.metrosCuadradosMax) {
+        cumpleFiltro = false;
+      }
+      if (propiedad.metrosCuadrados < filtros.metrosCuadradosMin) {
+        cumpleFiltro = false;
+      }
+    }
+    }
     
-}
+    if (cumpleFiltro) {
+      propiedadesFiltradas[indicePropsFiltradas] = propiedad;
+      indicePropsFiltradas++;
+    }
+  }
 
 console.log("Resultados encontrados: " + propiedadesFiltradas.length);
