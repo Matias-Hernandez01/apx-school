@@ -22,20 +22,32 @@ function main() {
     { texto: 'Development', number: 20 },
   ];
 
-  function filtraSoloNumerosPares(arrayDeObjeto) {
-    let listWithResults = [];
-
-    for (let i = 0; i < arrayDeObjeto.length; i++) {
-      let currentPosition = arrayDeObjeto[i];
-      if (currentPosition.number % 2 === 0) {
-        listWithResults.push(currentPosition);
-      }
-    }
-    return listWithResults;
-  }
-
   const resultado = filtraSoloNumerosPares(arrayOfObjects);
   console.log(resultado);
+  
 }
 
+function filtraSoloNumerosPares(arrayDeObjeto) {
+  const results = arrayDeObjeto.filter((objeto) => objeto.number% 2 === 0);
+  return results;
+}
+
+function testFiltrarObjetosPares() {
+  const array1 = [{number: 1}, {number: 2}, {number: 3}, {number: 4}];
+  const array2 = [{number: 1}, {number: 3}, {number: 5}, {number: 7}];
+
+  // Prueba 1
+  const resultado1 = filtraSoloNumerosPares(array1);
+  const esperado1 = [{number: 2}, {number: 4}];
+  console.assert(JSON.stringify(resultado1) === JSON.stringify(esperado1), `Error en la Prueba 1. Se esperaba ${JSON.stringify(esperado1)} pero se obtuvo ${JSON.stringify(resultado1)}`);
+
+  // Prueba 2
+  const resultado2 = filtraSoloNumerosPares(array2);
+  const esperado2 = [];
+  console.assert(JSON.stringify(resultado2) === JSON.stringify(esperado2), `Error en la Prueba 2. Se esperaba ${JSON.stringify(esperado2)} pero se obtuvo ${JSON.stringify(resultado2)}`);
+}
+
+
+
 main();
+testFiltrarObjetosPares()
